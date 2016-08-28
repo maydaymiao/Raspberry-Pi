@@ -25,7 +25,7 @@ Before connecting to VNC, you have to firstly run `sudo apt-get install tightvnc
 
 
 ###<h4 id="2.2">2.2 Config.txt</h4>
-The default keyboard layout of Raspberry Pi is British keyboard, I change to US setting as I am more used to that.<br>
+The default keyboard layout of Raspberry Pi is British keyboard, you can follow below steps to change to US setting.<br>
 1. `sudo raspi-config`<br>
 2. Select International Options<br>
 3. Select Generic 104-key PC<br>
