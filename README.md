@@ -13,9 +13,9 @@ Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
 * [3. Sensor Project](#3)
   * [3.1. First Project - DS18B20 Temperature Sensor](#3.1)
   * [3.2. I2C - BM180 Environment Sensor](#3.2)
-* [4. Communication Protocol]
+* [4. Communication Protocol](#4)
   * [4.1. REST](#4.1)
-  * [4.1. MQTT](#4.2)
+  * [4.2. MQTT](#4.2)
 
 
 ##<h2 id="1">1. Hardware</h2>
