@@ -5,7 +5,7 @@ Email: maydaymiao@126.com<br>
 Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
 
 # Raspberry-Pi
-## catalogue
+## **Catalogue**
 * [1. Hardware](#1)
 * [2. Pre-config](#2)
   * [2.1. Putty and TightVNC Viewer](#2.1)
