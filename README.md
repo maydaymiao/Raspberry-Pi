@@ -29,7 +29,8 @@ As it is quite slow to access to orignal Raspbian source from China, you can swi
 `sudo nano /etc/apt/sources.list`<br>
 Replace the contents with below,<br>
 `deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib`<br>
-`deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib`<br><br>
+`deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib`<br>
+Then run: `sudo apt-get update && apt-get upgrade -y`<br><br>
 Download and install Putty.exe from: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html. You can find the IP address of your Raspberry Pi from your router list and connect Putty with your device, the inital username and password for Raspberry Pi is "pi" and "raspberry".<br><br>
 In order to has a remote GUI view of your Rapsberry Pi, I use a tool called VNC, you can download from: http://www.tightvnc.com/download.php. <br><br>
 Before connecting to VNC, you have to firstly run `sudo apt-get install tightvncserver` in putty, and then run `vncserver -geometry 1024x768`, it will ask you to set a password for remoting at the first time. 
