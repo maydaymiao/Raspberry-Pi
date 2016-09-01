@@ -89,4 +89,21 @@ while True:
 ```
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/temp.png)
 
+##<h3 id="3.2">3.2. I2C - BM180 Environment Sensor</h3>
+I2C is a very commonly used standard designed to allow one chip to talk to another. If this is your first time to connect I2C to the Pi, please follow below steps.<br>
+```linux
+sudo apt-get install python-smbus
+sudo apt-get install i2c-tools
+sudo raspi-config
+Advanced Options - I2C - Enable
+sudu reboot
+```
+####Testing I2C
+`sudo i2cdetect -y 1`<br>
+If you can see the number in the address (show up at 0x77), which means you have already connected the I2C. One tip is that if it is not showing after go through my steps, try to press tight the sensor into your breadboard.<br>
+![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/I2C.png)
+
+
+
+
 
