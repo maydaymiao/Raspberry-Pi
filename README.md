@@ -25,6 +25,11 @@ Raspberry Pi 3, 32GB MicroSD Card, 5inch-HDMI-LCD, Breadboard, DS18B20, BM180, M
 
 ##<h2 id="2">2. Pre-config</h2>
 ###<h3 id="2.1">2.1 Putty and TightVNC Viewer</h3>
+As it is quite slow to access to orignal Raspbian source from China, you can switch to China local source, here I use Aliyun.<br>
+`sudo nano /etc/apt/sources.list`<br>
+Replace the contents to below,<br>
+`deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib`<br>
+`deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib`<br><br>
 Download and install Putty.exe from: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html. You can find the IP address of your Raspberry Pi from your router list and connect Putty with your device, the inital username and password for Raspberry Pi is "pi" and "raspberry".<br><br>
 In order to has a remote GUI view of your Rapsberry Pi, I use a tool called VNC, you can download from: http://www.tightvnc.com/download.php. <br><br>
 Before connecting to VNC, you have to firstly run `sudo apt-get install tightvncserver` in putty, and then run `vncserver -geometry 1024x768`, it will ask you to set a password for remoting at the first time. 
