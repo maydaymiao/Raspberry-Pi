@@ -103,7 +103,15 @@ sudu reboot
 If you can see the number in the address (show up at 0x77), which means you have already connected the I2C. One tip is that if it is not showing after go through my steps, try to press tight the sensor into your breadboard.<br>
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/I2C.png)
 
-
-
+####Using the Adafruit BMP Python Library
+```linux
+sudo apt-get update
+git clone https://github.com/adafruit/Adafruit_Python_BMP.git
+cd Adafruit_Python_BMP
+sudo python setup.py install
+cd examples
+sudo python simpletest.py
+```
+![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/BM180_Sample.png)
 
 
