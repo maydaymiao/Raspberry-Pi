@@ -90,6 +90,8 @@ while True:
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/temp.png)
 
 ##<h3 id="3.2">3.2. I2C - BM180 Environment Sensor</h3>
+
+![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/BMP180_Wiring.jpg)
 I2C is a very commonly used standard designed to allow one chip to talk to another. If this is your first time to connect I2C to the Pi, please follow below steps.<br>
 ```linux
 sudo apt-get install python-smbus
