@@ -116,4 +116,23 @@ sudo python simpletest.py
 ```
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/BM180_Sample.png)
 
-
+##<h2 id="4">4. Communication Protocol</h2>
+###<h3 id="4.1">4.1. REST</h3>
+###<h3 id="4.2">4.2. MQTT</h3>
+Eclipse Mosquitto™ is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 3.1 and 3.1.1. MQTT provides a lightweight method of carrying out messaging using a publish/subscribe model. This makes it suitable for "Internet of Things" messaging such as with low power sensors or mobile devices such as phones, embedded computers or microcontrollers like the Arduino.
+```linux
+wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
+sudo apt-key add mosquitto-repo.gpg.key
+cd /etc/apt/sources.list.d/
+sudo wget http://repo.mosquitto.org/debian/mosquitto-jessie.list
+sudu apt-get update
+sudo apt-get install mosquitto
+```
+You may get an error message when go through the last step above: "Depends: libwebsockets3 (>= 1.2) but it is not installable". To solve this error, please follow below steps.<br>
+```linux
+wget http://ftp.cn.debian.org/debian/pool/main/libw/libwebsockets/libwebsockets3_1.2.2-1_armhf.deb
+sudo dpkg -i libwebsockets3_1.2.2-1_armhf.deb
+sudo apt-get install mosquitto
+```
+You can run `netstat -tln | grep 1883` to verify the installation, if you can see the same as below which means you have successfully installed Mosquitto broker.
+![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/mqtt_broker.png)
