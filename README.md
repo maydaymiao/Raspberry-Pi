@@ -119,6 +119,7 @@ sudo python simpletest.py
 ##<h2 id="4">4. Communication Protocol</h2>
 ###<h3 id="4.1">4.1. REST</h3>
 ###<h3 id="4.2">4.2. MQTT</h3>
+####Mosquitto
 Eclipse Mosquitto™ is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 3.1 and 3.1.1. MQTT provides a lightweight method of carrying out messaging using a publish/subscribe model. This makes it suitable for "Internet of Things" messaging such as with low power sensors or mobile devices such as phones, embedded computers or microcontrollers like the Arduino.
 ```linux
 wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
@@ -136,3 +137,17 @@ sudo apt-get install mosquitto
 ```
 You can run `netstat -tln | grep 1883` to verify the installation, if you can see the same as below which means you have successfully installed Mosquitto broker.
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/mqtt_broker.png)
+
+####Paho Client
+The Eclipse Paho project provides open-source client implementations of MQTT and MQTT-SN messaging protocols aimed at new, existing, and emerging applications for the Internet of Things (IoT). Follow below steps to install Paho on your Pi.<br>
+```linux
+pip install paho-mqtt
+git clone https://github.com/eclipse/paho.mqtt.python.git
+cd /home/pi/paho.mqtt.python/
+sudo python setup.py install
+```
+To verify the installation of Paho, you can do this:<br>
+`git clone https://github.com/maydaymiao/Raspberry_Pi.git`<br>
+You can either run in the terminal, or go to the MQTT folder, firstly run the Publisher.py, then run the Subscriber.py. Please do remember fill your Pi's IP address into "MQTT BROKER". You shoud able to see the same as below.<br>
+![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/Paho.png)
+
