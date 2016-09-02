@@ -120,6 +120,7 @@ sudo python simpletest.py
 ###<h3 id="4.1">4.1. REST</h3>
 ###<h3 id="4.2">4.2. MQTT</h3>
 ####Mosquitto
+Here is a very good introduction for MQTT: https://www.baldengineer.com/mqtt-introduction.html<br>
 Eclipse Mosquitto™ is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 3.1 and 3.1.1. MQTT provides a lightweight method of carrying out messaging using a publish/subscribe model. This makes it suitable for "Internet of Things" messaging such as with low power sensors or mobile devices such as phones, embedded computers or microcontrollers like the Arduino.
 ```linux
 wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
