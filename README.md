@@ -14,6 +14,7 @@ Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
   * [3.1. First Project - DS18B20 Temperature Sensor](#3.1)
   * [3.2. I2C - BM180 Environment Sensor](#3.2)
   * [3.3. Character LCD](#3.3)
+  * [3.4. PIR Sensor](#3.4)
 * [4. Communication Protocol](#4)
   * [4.1. REST](#4.1)
   * [4.2. MQTT](#4.2)
@@ -165,6 +166,14 @@ cd Raspberry_Pi
 python char_lcd_bmp180.py
 ```
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/LCD_Rasp_Wiring.jpg)
+
+##<h3 id="3.4">3.4. PIR Sensor</h3>
+```linux
+git clone https://github.com/maydaymiao/Raspberry_Pi.git
+cd Raspberry_Pi
+python PIR_Marry_Me.py
+```
+![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/PIR_Marry_Me.jpg)
 
 ##<h2 id="4">4. Communication Protocol</h2>
 ###<h3 id="4.1">4.1. REST</h3>
