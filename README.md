@@ -116,6 +116,50 @@ sudo python simpletest.py
 ```
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/BM180_Sample.png)
 
+##<h3 id="3.3">3.3. Character LCD</h3>
+From this tutorial, you will learn how to send message to a character LCD and display the temperature and pressure data from above BM180 project to LCD
+####Hardware
+16*2 LCD, breadboard, connecting pins and potentiometer<br>
+####Wiring
+
+![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/LCD_Wiring.png)
+
+* Connect Pi 5V power to the power rail of the breadboard. From the power rail connect one outer lead of the potentiometer, LCD pin 2 (VDD), and LCD pin 15 (LED+).
+* Connect Pi ground to the ground rail of the breadboard. From the ground rail connect the other outer lead of the potentiometer, LCD pin 1 (VSS), LCD pin 5 (R/W) and LCD pin 16.
+* Connect the middle lead of the potentiometer to LCD pin 3 (V0/contrast) and left right to ground and 5V power.
+* Connect Pi pin 27 to LCD pin 4 (RS).
+* Connect Pi pin 22 to LCD pin 6 (E/clock enable).
+* Connect Pi pin 25 to LCD pin 11 (DB4).
+* Connect Pi pin 24 to LCD pin 12 (DB5).
+* Connect Pi pin 23 to LCD pin 13 (DB6).
+* Connect Pi pin 18 to LCD pin 14 (DB7).
+
+####Dependencies
+```linux
+sudo apt-get update
+sudo apt-get install build-essential python-dev python-smbus python-pip git       #You can ignore any warnings about dependencies already being installed.
+sudo pip install RPi.GPIO
+```
+####Installation
+Once the dependencies above have been installed you can install the character LCD module by executing the following commands on the device:
+```linux
+cd ~
+git clone https://github.com/adafruit/Adafruit_Python_CharLCD.git
+cd Adafruit_Python_CharLCD
+sudo python setup.py install
+```
+####Usage
+Once the library is installed you can find a few examples of its usage in the examples subdirectory. If you're using a monochrome backlight LCD (i.e. single color, like a white on blue LCD) the char_lcd.py script will demonstrate the basic usage, and you can ignore the backlight pin definition in the script as monochrome LCD does not have that.<br>
+To run the example execute:<br>
+```linux
+cd examples
+python char_lcd.py
+```
+You should see the LCD backlight turn on and messages printed to the display.
+
+####Showing current time, temperature and pressure data in the LCD
+
+
 ##<h2 id="4">4. Communication Protocol</h2>
 ###<h3 id="4.1">4.1. REST</h3>
 ###<h3 id="4.2">4.2. MQTT</h3>
