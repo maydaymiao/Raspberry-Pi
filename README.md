@@ -158,8 +158,13 @@ python char_lcd.py
 ```
 You should see the LCD backlight turn on and messages printed to the display.
 
-####Showing current time, temperature and pressure data in the LCD
-
+####Showing current time, temperature and pressure data in the LCD (Require you to complete the second project)
+```linux
+git clone https://github.com/maydaymiao/Raspberry_Pi.git
+cd Raspberry_Pi
+python char_lcd_bmp180.py
+```
+![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/LCD_Rasp_Wiring.jpg)
 
 ##<h2 id="4">4. Communication Protocol</h2>
 ###<h3 id="4.1">4.1. REST</h3>
