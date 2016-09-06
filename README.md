@@ -120,7 +120,7 @@ sudo python simpletest.py
 ##<h3 id="3.3">3.3. Character LCD</h3>
 From this tutorial, you will learn how to send message to a character LCD and display the temperature and pressure data from above BM180 project to LCD
 ####Hardware
-16*2 LCD, breadboard, connecting pins and potentiometer<br>
+16*2 LCD, breadboard, connecting pins and potentiometer (in Chinese, it is called as "电位器")<br>
 ####Wiring
 
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/LCD_Wiring.png)
