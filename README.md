@@ -168,6 +168,15 @@ python char_lcd_bmp180.py
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/LCD_Rasp_Wiring.jpg)
 
 ##<h3 id="3.4">3.4. PIR Sensor</h3>
+####Parts
+PIR Sensor, LCD, LED, 220Ohm resistor, jumper wires
+####Wiring
+Connect the middle pin of PIR sensor to Pi pin 26, left pin to ground and right pin to 5V.<br>
+Connect the long pin of LED to resistor and to ground, the short pin to Pi pin 5.<br>
+The LCD wiring is same as the last tutorial. <br>
+####Configure and Test
+You will notice that the LED lights on and the LCD message changes after you execute the python program, also the code prints: “Motion Detected!" when you place your hand over the sensor. 
+
 ```linux
 git clone https://github.com/maydaymiao/Raspberry_Pi.git
 cd Raspberry_Pi
