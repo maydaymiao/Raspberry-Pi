@@ -1,0 +1,1 @@
+[{"id":"2c209c44.c3a1d4","type":"azureiothub","z":"fbccebd1.f65e98","name":"Azure IoT Hub","protocol":"mqtt","x":713.5,"y":179.1999969482422,"wires":[[]]}]
