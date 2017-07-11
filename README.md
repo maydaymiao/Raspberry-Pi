@@ -228,7 +228,7 @@ You can either run in the terminal, or go to the MQTT folder, firstly run the Pu
 ##<h2 id="5">5. Freeboard</h2>
 Freeboard is an open source real-time dashboard builder for IOT and other web mashups.<br>
 **Apache**<br>
-Here is a great tutorial to set up the Web Server in Raspberry Pi: https://www.youtube.com/watch?v=N7c8CMuBx-Y.<br><br>
+Here is a great tutorial to set up the Web Server in Raspberry Pi: https://www.youtube.com/watch?v=N7c8CMuBx-Y.<br>
 **Install Freeboard**<br>
 ```linux
 git clone https://github.com/Freeboard/freeboard.git
@@ -243,4 +243,52 @@ sudo -s
 cd /var/www/html
 ln -s /home/pi/freeboard dashboard
 ```
-And now freeboard is available at the url http://myserveraddres/dashboard
+And now freeboard is available at the url http://myserveraddres/dashboard<br>
+**Activate Websocket Support for Mosquitto**<br>
+The Paho library used by the Freeboard MQTT plug-in supports MQTT over websockets. If you’re using the Mosquitto MQTT broker make sure websockets have been enabled.<br>
+```linux
+listener 1883
+
+listener 9001 127.0.0.1
+protocol websockets
+```
+Then we run it with:
+```linux
+mosquitto -c /etc/mosquitto/mosquitto.con
+sudo service mosquitto restart
+```
+**Freeboard MQTT Plug-in**<br>
+Assuming you gonna install plug-in under /home/pi/freeboard/plugins/thirdparty<br>
+```linux
+cd ~/freeboard/plugins/thirdparty
+wget https://github.com/maydaymiao/Raspberry_Pi/blob/master/freeboard/mqttws31.js
+wget https://github.com/maydaymiao/Raspberry_Pi/blob/master/freeboard/ibm.iotfoundation.plugin.js
+wget https://github.com/maydaymiao/Raspberry_Pi/blob/master/freeboard/paho.mqtt.plugin.js
+```
+We need to edit the plug-in files and change the line:<br>
+```javascript
+ "external_scripts" : [
+                        "<full address of the paho mqtt javascript client>" 
+                ],
+```
+To
+```javascript
+"external_scripts" : [
+                        "plugins/thirdparty/mqttws31.js" 
+                ],
+```
+and finally we need to change the index.html file:<br>
+```javascript
+<script type="text/javascript">
+    head.js("js/freeboard+plugins.min.js",
+            "plugins/thirdparty/ibm.iotfoundation.plugin.js",
+            "plugins/thirdparty/paho.mqtt.plugin.js",
+     // *** Load more plugins here ***
+     function(){
+         $(function()
+            { //DOM Ready
+               freeboard.initialize(true);
+            });
+     });
+</script>
+```
