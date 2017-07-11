@@ -18,6 +18,7 @@ Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
 * [4. Communication Protocol](#4)
   * [4.1. REST](#4.1)
   * [4.2. MQTT](#4.2)
+* [5. Freeboard](#5)
 
 
 ##<h2 id="1">1. Hardware</h2>
@@ -220,3 +221,4 @@ To verify the installation of Paho, you can do this:<br>
 You can either run in the terminal, or go to the MQTT folder, firstly run the Publisher.py, then run the Subscriber.py. Please do remember fill your Pi's IP address into "MQTT BROKER". You shoud able to see the same as below.<br>
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/Paho.png)
 
+##<h2 id="5">5. Freeboard</h2>
