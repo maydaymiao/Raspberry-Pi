@@ -222,3 +222,4 @@ You can either run in the terminal, or go to the MQTT folder, firstly run the Pu
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/Paho.png)
 
 ##<h2 id="5">5. Freeboard</h2>
+Freeboard is an open source real-time dashboard builder for IOT and other web mashups.<br>
