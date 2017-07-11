@@ -208,7 +208,7 @@ sudo apt-get install mosquitto
 You can run `netstat -tln | grep 1883` to verify the installation, if you can see the same as below which means you have successfully installed Mosquitto broker.
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/mqtt_broker.png)
 
-####Paho Client
+####Paho Client<br>
 The Eclipse Paho project provides open-source client implementations of MQTT and MQTT-SN messaging protocols aimed at new, existing, and emerging applications for the Internet of Things (IoT). Follow below steps to install Paho on your Pi.<br>
 ```linux
 pip install paho-mqtt
