@@ -8,7 +8,11 @@ Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
 ## **Catalogue**
 * [1. Hardware](#1)
 * [2. Pre-config](#2)
-  * [2.1. Putty and TightVNC Viewer](#2.1)
+  * [2.1. 
+  
+  
+  
+  and TightVNC Viewer](#2.1)
   * [2.2. Config.txt](#2.2)
 * [3. Sensor Project](#3)
   * [3.1. First Project - DS18B20 Temperature Sensor](#3.1)
@@ -223,3 +227,20 @@ You can either run in the terminal, or go to the MQTT folder, firstly run the Pu
 
 ##<h2 id="5">5. Freeboard</h2>
 Freeboard is an open source real-time dashboard builder for IOT and other web mashups.<br>
+**Apache**<br>
+Here is a great tutorial to set up the Web Server in Raspberry Pi: https://www.youtube.com/watch?v=N7c8CMuBx-Y.<br><br>
+**Install Freeboard**<br>
+```linux
+git clone https://github.com/Freeboard/freeboard.git
+cd freeboard
+sudo npm install -g grunt-cli
+npm install
+grunt
+```
+**Configure Apache**<br>
+```linux
+sudo -s
+cd /var/www/html
+ln -s /home/pi/freeboard dashboard
+```
+And now freeboard is available at the url http://myserveraddres/dashboard
