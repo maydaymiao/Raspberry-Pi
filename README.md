@@ -66,12 +66,12 @@ run `sudo reboot`<br>
 
 ##<h2 id="3">3. Project</h2>
 ##<h3 id="3.1">3.1. First Project - DS18B20 Temperature Sensor</h3>
-####Hardware####
+**Hardware**<br>
 DS18B20 sensor and a 4.7K resistor. You can also use a DS18B20 module which embeded the resistor inside, and that is my choice as well. 
 
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/DS18B20.jpg)
 
-####Add OneWire support####
+**Add OneWire support**<br>
 1. Run `sudo nano /boot/config.txt`, Scrolling to the bottom and typing `dtoverlay=w1-gpio` there and then run `sudo reboot`.
 2. When the device is back up, type the commands below into terminal. After that, you should be able to see YES at the end of the first line and the temperature will be at the end of the second line, in 1/000 degrees C.
 ```linux
@@ -83,7 +83,7 @@ cd 28-xxxx (change this to match what serial number pops up, you can type 28 and
 cat w1_slave
 ```
 
-####Python Project####
+**Python Project**<br>
 Please refer to: https://github.com/maydaymiao/Raspberry_Pi/blob/master/DS18B20_Temperature_Sensor.py<br>
 You can remove the blank space for the last two statements if you would like to print the real time value on the screen.
 ```python
@@ -103,12 +103,12 @@ sudo raspi-config
 Advanced Options - I2C - Enable
 sudu reboot
 ```
-####Testing I2C
+**Testing I2C**<br>
 `sudo i2cdetect -y 1`<br>
 If you can see the number in the address (show up at 0x77), which means you have already connected the I2C. One tip is that if it is not showing after go through my steps, try to press tight the sensor into your breadboard.<br>
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/I2C.png)
 
-####Using the Adafruit BMP Python Library
+**Using the Adafruit BMP Python Library**<br>
 ```linux
 sudo apt-get update
 git clone https://github.com/adafruit/Adafruit_Python_BMP.git
@@ -121,9 +121,9 @@ sudo python simpletest.py
 
 ##<h3 id="3.3">3.3. Character LCD</h3>
 From this tutorial, you will learn how to send message to a character LCD and display the temperature and pressure data from above BM180 project to LCD
-####Hardware
+**Hardware**<br>
 16*2 LCD, breadboard, connecting pins and potentiometer (in Chinese, it is called as "电位器")<br>
-####Wiring
+**Wiring**<br>
 
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/LCD_Wiring.png)
 
@@ -137,13 +137,13 @@ From this tutorial, you will learn how to send message to a character LCD and di
 * Connect Pi pin 23 to LCD pin 13 (DB6).
 * Connect Pi pin 18 to LCD pin 14 (DB7).
 
-####Dependencies
+**Dependencies**<br>
 ```linux
 sudo apt-get update
 sudo apt-get install build-essential python-dev python-smbus python-pip git       #You can ignore any warnings about dependencies already being installed.
 sudo pip install RPi.GPIO
 ```
-####Installation
+**Installation**<br>
 Once the dependencies above have been installed you can install the character LCD module by executing the following commands on the device:
 ```linux
 cd ~
@@ -151,7 +151,7 @@ git clone https://github.com/adafruit/Adafruit_Python_CharLCD.git
 cd Adafruit_Python_CharLCD
 sudo python setup.py install
 ```
-####Usage
+**Usage**<br>
 Once the library is installed you can find a few examples of its usage in the examples subdirectory. If you're using a monochrome backlight LCD (i.e. single color, like a white on blue LCD) the char_lcd.py script will demonstrate the basic usage, and you can ignore the backlight pin definition in the script as monochrome LCD does not have that.<br>
 To run the example execute:<br>
 ```linux
@@ -169,13 +169,13 @@ python char_lcd_bmp180.py
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/LCD_Rasp_Wiring.jpg)
 
 ##<h3 id="3.4">3.4. PIR Sensor</h3>
-####Parts
-PIR Sensor, LCD, LED, 220Ohm resistor, jumper wires
-####Wiring
+**Parts**<br>
+PIR Sensor, LCD, LED, 220Ohm resistor, jumper wires<br>
+**Wiring**<br>
 Connect the middle pin of PIR sensor to Pi pin 26, left pin to ground and right pin to 5V.<br>
 Connect the long pin of LED to resistor and to ground, the short pin to Pi pin 5.<br>
 The LCD wiring is same as the last tutorial. <br>
-####Configure and Test
+**Configure and Test**<br>
 You will notice that the LED lights on and the LCD message changes after you execute the python program, also the code prints: “Motion Detected!" when you place your hand over the sensor. 
 
 ```linux
@@ -188,7 +188,7 @@ python PIR_Marry_Me.py
 ##<h2 id="4">4. Communication Protocol</h2>
 ###<h3 id="4.1">4.1. REST</h3>
 ###<h3 id="4.2">4.2. MQTT</h3>
-####Mosquitto
+**Mosquitto**<br>
 Here is a very good introduction for MQTT: https://www.baldengineer.com/mqtt-introduction.html<br>
 Eclipse Mosquitto™ is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 3.1 and 3.1.1. MQTT provides a lightweight method of carrying out messaging using a publish/subscribe model. This makes it suitable for "Internet of Things" messaging such as with low power sensors or mobile devices such as phones, embedded computers or microcontrollers like the Arduino.
 ```linux
@@ -208,7 +208,7 @@ sudo apt-get install mosquitto
 You can run `netstat -tln | grep 1883` to verify the installation, if you can see the same as below which means you have successfully installed Mosquitto broker.
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/mqtt_broker.png)
 
-*Paho Client*<br>
+**Paho Client**<br>
 The Eclipse Paho project provides open-source client implementations of MQTT and MQTT-SN messaging protocols aimed at new, existing, and emerging applications for the Internet of Things (IoT). Follow below steps to install Paho on your Pi.<br>
 ```linux
 pip install paho-mqtt
