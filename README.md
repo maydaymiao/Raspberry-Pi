@@ -246,6 +246,26 @@ ln -s /home/pi/freeboard dashboard
 And now freeboard is available at the url http://myserveraddres/dashboard<br>
 **Activate Websocket Support for Mosquitto**<br>
 The Paho library used by the Freeboard MQTT plug-in supports MQTT over websockets. If you’re using the Mosquitto MQTT broker make sure websockets have been enabled.<br>
+Step 1: Download and build libwebsockets<br>
+```linux
+sudo apt-get install libssl-dev
+sudo apt-get install cmake
+git clone https://github.com/warmcat/libwebsockets.git
+cd libwebsockets
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+sudo ldconfig
+```
+Use ```linux pkg-config --modversion libwebsockets``` to check the version of libwebsockets you installed.<br>
+Step 2: Configure mosquitto to use libwebsockets<br>
+```linux
+cd /etc/mosquitto/conf.d
+sudo nano websocket.conf
+```
+And then add below:
 ```linux
 listener 1883
 
