@@ -212,6 +212,32 @@ sudo apt-get install mosquitto
 You can run `netstat -tln | grep 1883` to verify the installation, if you can see the same as below which means you have successfully installed Mosquitto broker.
 ![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/mqtt_broker.png)
 
+Follow below steps for installing in Ubuntu (A great tutorial for this: https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-ubuntu-16-04):<br>
+```linux
+sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+sudo apt-get update
+sudo apt-get install mosquitto
+sudo apt-get install libmosquitto-dev
+sudo apt-get install mosquitto-clients
+```
+For enabling websockets, edit ```sudo nano /etc/mosquitto/conf.d/default.conf```, do not add 127.0.0.1 behind "listener 9001", otherwise it will cause problem especially when you deploy in the cloud VM.<br>
+```linux
+listener 1883
+listener 9001
+protocol websockets
+```
+Then we run it with:
+```linux
+mosquitto -c /etc/mosquitto/mosquitto.conf
+sudo service mosquitto restart
+```
+Try:
+```linux
+netstat -tln | grep 1883
+netstat -tln | grep 9001
+```
+![](https://github.com/maydaymiao/Raspberry_Pi/blob/master/image/grep.PNG)
+
 **Paho Client**<br>
 The Eclipse Paho project provides open-source client implementations of MQTT and MQTT-SN messaging protocols aimed at new, existing, and emerging applications for the Internet of Things (IoT). Follow below steps to install Paho on your Pi.<br>
 ```linux
@@ -259,7 +285,7 @@ make
 sudo make install
 sudo ldconfig
 ```
-Use ```linux pkg-config --modversion libwebsockets``` to check the version of libwebsockets you installed.<br><br>
+Use ```pkg-config --modversion libwebsockets``` to check the version of libwebsockets you installed.<br><br>
 Step 2: Configure mosquitto to use libwebsockets
 ```linux
 cd /etc/mosquitto/conf.d
