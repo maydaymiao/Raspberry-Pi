@@ -274,7 +274,7 @@ protocol websockets
 ```
 Then we run it with:
 ```linux
-mosquitto -c /etc/mosquitto/mosquitto.con
+mosquitto -c /etc/mosquitto/mosquitto.conf
 sudo service mosquitto restart
 ```
 **Freeboard MQTT Plug-in**<br>
