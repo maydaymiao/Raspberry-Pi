@@ -23,7 +23,7 @@ Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
   * [4.1. REST](#4.1)
   * [4.2. MQTT](#4.2)
 * [5. Freeboard](#5)
-
+* [6. Node-Red Ubuntu](#6)
 
 ##<h2 id="1">1. Hardware</h2>
 Raspberry Pi 3, 32GB MicroSD Card, 5inch-HDMI-LCD, Breadboard, DS18B20, BM180, Mouse and Keyboard
@@ -338,3 +338,6 @@ and finally we need to change the index.html file:<br>
      });
 </script>
 ```
+
+##<h2 id="5">6. Node-Red Ubuntu</h2>
+See: https://www.digitalocean.com/community/tutorials/how-to-connect-your-internet-of-things-with-node-red-on-ubuntu-16-04<br>
