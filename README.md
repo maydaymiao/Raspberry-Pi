@@ -339,5 +339,5 @@ and finally we need to change the index.html file:<br>
 </script>
 ```
 
-##<h2 id="5">6. Node-Red Ubuntu</h2>
+##<h2 id="6">6. Node-Red Ubuntu</h2>
 See: https://www.digitalocean.com/community/tutorials/how-to-connect-your-internet-of-things-with-node-red-on-ubuntu-16-04<br>
