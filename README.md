@@ -8,11 +8,7 @@ Linkedin: https://www.linkedin.com/profile/in/michael-miao-21939749
 ## **Catalogue**
 * [1. Hardware](#1)
 * [2. Pre-config](#2)
-  * [2.1. 
-  
-  
-  
-  and TightVNC Viewer](#2.1)
+  * [2.1. Putty and TightVNC Viewer](#2.1)
   * [2.2. Config.txt](#2.2)
 * [3. Sensor Project](#3)
   * [3.1. First Project - DS18B20 Temperature Sensor](#3.1)
